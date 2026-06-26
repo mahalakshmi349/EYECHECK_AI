@@ -4,6 +4,7 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0-orange?style=flat-square&logo=pytorch)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.x-red?style=flat-square&logo=streamlit)
 ![Accuracy](https://img.shields.io/badge/Accuracy-87.7%25-green?style=flat-square)
+![AUC](https://img.shields.io/badge/Mean%20AUC-0.963-brightgreen?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)
 
 > **AI-powered fundus image analysis for early diabetic retinopathy detection — built for low-cost, offline deployment in rural healthcare settings.**
@@ -51,6 +52,15 @@ EyeCheck AI is a hybrid ensemble deep learning system that analyzes retinal fund
 | Mild DR | 87.5% |
 | Moderate DR | 73.4% |
 
+### ROC AUC Scores (Ensemble)
+
+| Class | AUC Score |
+|---|---|
+| No DR | **0.994** |
+| Moderate DR | **0.968** |
+| Mild DR | **0.928** |
+| **Mean AUC** | **0.963** |
+
 ### Comparison with Existing Systems
 
 | System | Accuracy | Training Data |
@@ -60,6 +70,27 @@ EyeCheck AI is a hybrid ensemble deep learning system that analyzes retinal fund
 | **EyeCheck AI** | **87.7%** | **2,930 images** |
 
 > ✦ Within 3% of Google DeepMind's accuracy — using 44× less data, on a CPU laptop.
+> ✦ Mean AUC of 0.963 — Google's 2016 paper reported 0.991 with 44× more data.
+
+---
+
+## 📈 Evaluation Results
+
+### Training Curves — ResNet50
+![ResNet50 Training Curves](evaluation/01_resnet50_curves.png)
+
+### Training Curves — EfficientNet-B4
+![EfficientNet Training Curves](evaluation/02_efficientnet_curves.png)
+
+### Confusion Matrix — Ensemble
+![Confusion Matrix](evaluation/03_confusion_matrix.png)
+
+> No DR: **99.4%** correct · Mild DR: **75.0%** correct · Moderate DR: **78.6%** correct
+
+### ROC Curve — Ensemble (One-vs-Rest)
+![ROC Curve](evaluation/04_roc_curve.png)
+
+> Mean AUC = **0.963** — well above the 0.9 clinical threshold for diagnostic tools.
 
 ---
 
@@ -174,14 +205,14 @@ Saves confusion matrix, ROC curves, and accuracy/loss plots to `evaluation/`
 
 ```
 EyeCheck-AI/
-├── app.py              # Streamlit web application
-├── train_model.py      # Dual model training script
-├── evaluate.py         # Evaluation metrics and plots
-├── requirements.txt    # Python dependencies
-├── model/              # Saved model weights (after training)
+├── app.py                          # Streamlit web application
+├── train_model.py                  # Dual model training script
+├── evaluate.py                     # Evaluation metrics and plots
+├── requirements.txt                # Python dependencies
+├── model/                          # Saved model weights (after training)
 │   ├── resnet50_dr.pth
 │   └── efficientnet_dr.pth
-└── evaluation/         # Generated plots (after evaluate.py)
+└── evaluation/                     # Generated plots (after evaluate.py)
     ├── 01_resnet50_curves.png
     ├── 02_efficientnet_curves.png
     ├── 03_confusion_matrix.png
@@ -211,8 +242,11 @@ EyeCheck-AI/
 **Mahalakshmi N**
 Biomedical Engineering, PSNA College of Engineering and Technology (2024–2028)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin)](https://linkedin.com/in/yourprofile)
-[![GitHub](https://img.shields..io/badge/GitHub-Follow-black?style=flat-square&logo=github)](https://github.com/yourusername)
+[
+
+![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin)
+
+](https://www.linkedin.com/in/mahalakshmi-n-678522328)
 
 ---
 
