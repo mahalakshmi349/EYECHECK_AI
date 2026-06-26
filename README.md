@@ -242,11 +242,8 @@ EyeCheck-AI/
 **Mahalakshmi N**
 Biomedical Engineering, PSNA College of Engineering and Technology (2024–2028)
 
-[
 
-![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin)
-
-](https://www.linkedin.com/in/mahalakshmi-n-678522328)
+(https://www.linkedin.com/in/mahalakshmi-n-678522328)
 
 ---
 
